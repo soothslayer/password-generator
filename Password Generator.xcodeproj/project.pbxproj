@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDB9CE9629F6F761002B5882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9CE9529F6F761002B5882 /* AppDelegate.swift */; };
+		FDB9CE9A29F6F761002B5882 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CE9829F6F761002B5882 /* Main.html */; };
+		FDB9CE9C29F6F761002B5882 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CE9B29F6F761002B5882 /* Icon.png */; };
+		FDB9CE9E29F6F761002B5882 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CE9D29F6F761002B5882 /* Style.css */; };
+		FDB9CEA029F6F761002B5882 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9CE9F29F6F761002B5882 /* SceneDelegate.swift */; };
+		FDB9CEA229F6F761002B5882 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9CEA129F6F761002B5882 /* ViewController.swift */; };
+		FDB9CEA529F6F761002B5882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEA329F6F761002B5882 /* LaunchScreen.storyboard */; };
+		FDB9CEA829F6F761002B5882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEA629F6F761002B5882 /* Main.storyboard */; };
+		FDB9CEB029F6F763002B5882 /* Password Generator Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FDB9CEAF29F6F763002B5882 /* Password Generator Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FDB9CEB529F6F763002B5882 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9CEB429F6F763002B5882 /* SafariWebExtensionHandler.swift */; };
+		FDB9CEB829F6F763002B5882 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEB729F6F763002B5882 /* _locales */; };
+		FDB9CEBA29F6F763002B5882 /* images in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEB929F6F763002B5882 /* images */; };
+		FDB9CEBC29F6F763002B5882 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEBB29F6F763002B5882 /* manifest.json */; };
+		FDB9CEBE29F6F763002B5882 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEBD29F6F763002B5882 /* background.js */; };
+		FDB9CEC029F6F763002B5882 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEBF29F6F763002B5882 /* content.js */; };
+		FDB9CEC229F6F763002B5882 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEC129F6F763002B5882 /* popup.html */; };
+		FDB9CEC429F6F763002B5882 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEC329F6F763002B5882 /* popup.css */; };
+		FDB9CEC629F6F763002B5882 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEC529F6F763002B5882 /* popup.js */; };
+		FDB9CEC829F6F763002B5882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CEA929F6F763002B5882 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDB9CEB129F6F763002B5882 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDB9CE8A29F6F761002B5882 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDB9CEAE29F6F763002B5882;
+			remoteInfo = "Password Generator Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FDB9CECE29F6F763002B5882 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FDB9CEB029F6F763002B5882 /* Password Generator Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FDB9CE9229F6F761002B5882 /* Password Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB9CE9529F6F761002B5882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDB9CE9929F6F761002B5882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		FDB9CE9B29F6F761002B5882 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		FDB9CE9D29F6F761002B5882 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		FDB9CE9F29F6F761002B5882 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FDB9CEA129F6F761002B5882 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDB9CEA429F6F761002B5882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDB9CEA729F6F761002B5882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDB9CEA929F6F763002B5882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDB9CEAA29F6F763002B5882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDB9CEAF29F6F763002B5882 /* Password Generator Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Password Generator Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB9CEB429F6F763002B5882 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		FDB9CEB729F6F763002B5882 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		FDB9CEB929F6F763002B5882 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		FDB9CEBB29F6F763002B5882 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		FDB9CEBD29F6F763002B5882 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		FDB9CEBF29F6F763002B5882 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
+		FDB9CEC129F6F763002B5882 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		FDB9CEC329F6F763002B5882 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		FDB9CEC529F6F763002B5882 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		FDB9CEC729F6F763002B5882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDB9CE8F29F6F761002B5882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB9CEAC29F6F763002B5882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDB9CE8929F6F761002B5882 = {
+			isa = PBXGroup;
+			children = (
+				FDB9CE9429F6F761002B5882 /* Password Generator */,
+				FDB9CEB329F6F763002B5882 /* Password Generator Extension */,
+				FDB9CE9329F6F761002B5882 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDB9CE9329F6F761002B5882 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDB9CE9229F6F761002B5882 /* Password Generator.app */,
+				FDB9CEAF29F6F763002B5882 /* Password Generator Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDB9CE9429F6F761002B5882 /* Password Generator */ = {
+			isa = PBXGroup;
+			children = (
+				FDB9CE9529F6F761002B5882 /* AppDelegate.swift */,
+				FDB9CE9F29F6F761002B5882 /* SceneDelegate.swift */,
+				FDB9CEA129F6F761002B5882 /* ViewController.swift */,
+				FDB9CEA329F6F761002B5882 /* LaunchScreen.storyboard */,
+				FDB9CEA629F6F761002B5882 /* Main.storyboard */,
+				FDB9CEA929F6F763002B5882 /* Assets.xcassets */,
+				FDB9CEAA29F6F763002B5882 /* Info.plist */,
+				FDB9CE9729F6F761002B5882 /* Resources */,
+			);
+			path = "Password Generator";
+			sourceTree = "<group>";
+		};
+		FDB9CE9729F6F761002B5882 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FDB9CE9829F6F761002B5882 /* Main.html */,
+				FDB9CE9B29F6F761002B5882 /* Icon.png */,
+				FDB9CE9D29F6F761002B5882 /* Style.css */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FDB9CEB329F6F763002B5882 /* Password Generator Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FDB9CEB429F6F763002B5882 /* SafariWebExtensionHandler.swift */,
+				FDB9CEC729F6F763002B5882 /* Info.plist */,
+				FDB9CEB629F6F763002B5882 /* Resources */,
+			);
+			path = "Password Generator Extension";
+			sourceTree = "<group>";
+		};
+		FDB9CEB629F6F763002B5882 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FDB9CEB729F6F763002B5882 /* _locales */,
+				FDB9CEB929F6F763002B5882 /* images */,
+				FDB9CEBB29F6F763002B5882 /* manifest.json */,
+				FDB9CEBD29F6F763002B5882 /* background.js */,
+				FDB9CEBF29F6F763002B5882 /* content.js */,
+				FDB9CEC129F6F763002B5882 /* popup.html */,
+				FDB9CEC329F6F763002B5882 /* popup.css */,
+				FDB9CEC529F6F763002B5882 /* popup.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDB9CE9129F6F761002B5882 /* Password Generator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDB9CECF29F6F763002B5882 /* Build configuration list for PBXNativeTarget "Password Generator" */;
+			buildPhases = (
+				FDB9CE8E29F6F761002B5882 /* Sources */,
+				FDB9CE8F29F6F761002B5882 /* Frameworks */,
+				FDB9CE9029F6F761002B5882 /* Resources */,
+				FDB9CECE29F6F763002B5882 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDB9CEB229F6F763002B5882 /* PBXTargetDependency */,
+			);
+			name = "Password Generator";
+			productName = "Password Generator";
+			productReference = FDB9CE9229F6F761002B5882 /* Password Generator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDB9CEAE29F6F763002B5882 /* Password Generator Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDB9CECB29F6F763002B5882 /* Build configuration list for PBXNativeTarget "Password Generator Extension" */;
+			buildPhases = (
+				FDB9CEAB29F6F763002B5882 /* Sources */,
+				FDB9CEAC29F6F763002B5882 /* Frameworks */,
+				FDB9CEAD29F6F763002B5882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Password Generator Extension";
+			productName = "Password Generator Extension";
+			productReference = FDB9CEAF29F6F763002B5882 /* Password Generator Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDB9CE8A29F6F761002B5882 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					FDB9CE9129F6F761002B5882 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					FDB9CEAE29F6F763002B5882 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = FDB9CE8D29F6F761002B5882 /* Build configuration list for PBXProject "Password Generator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDB9CE8929F6F761002B5882;
+			productRefGroup = FDB9CE9329F6F761002B5882 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDB9CE9129F6F761002B5882 /* Password Generator */,
+				FDB9CEAE29F6F763002B5882 /* Password Generator Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDB9CE9029F6F761002B5882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB9CE9C29F6F761002B5882 /* Icon.png in Resources */,
+				FDB9CEA829F6F761002B5882 /* Main.storyboard in Resources */,
+				FDB9CEA529F6F761002B5882 /* LaunchScreen.storyboard in Resources */,
+				FDB9CE9A29F6F761002B5882 /* Main.html in Resources */,
+				FDB9CEC829F6F763002B5882 /* Assets.xcassets in Resources */,
+				FDB9CE9E29F6F761002B5882 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB9CEAD29F6F763002B5882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB9CEBE29F6F763002B5882 /* background.js in Resources */,
+				FDB9CEC429F6F763002B5882 /* popup.css in Resources */,
+				FDB9CEC229F6F763002B5882 /* popup.html in Resources */,
+				FDB9CEBA29F6F763002B5882 /* images in Resources */,
+				FDB9CEBC29F6F763002B5882 /* manifest.json in Resources */,
+				FDB9CEB829F6F763002B5882 /* _locales in Resources */,
+				FDB9CEC029F6F763002B5882 /* content.js in Resources */,
+				FDB9CEC629F6F763002B5882 /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDB9CE8E29F6F761002B5882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB9CEA229F6F761002B5882 /* ViewController.swift in Sources */,
+				FDB9CE9629F6F761002B5882 /* AppDelegate.swift in Sources */,
+				FDB9CEA029F6F761002B5882 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDB9CEAB29F6F763002B5882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDB9CEB529F6F763002B5882 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDB9CEB229F6F763002B5882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDB9CEAE29F6F763002B5882 /* Password Generator Extension */;
+			targetProxy = FDB9CEB129F6F763002B5882 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDB9CE9829F6F761002B5882 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDB9CE9929F6F761002B5882 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		FDB9CEA329F6F761002B5882 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDB9CEA429F6F761002B5882 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FDB9CEA629F6F761002B5882 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDB9CEA729F6F761002B5882 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDB9CEC929F6F763002B5882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDB9CECA29F6F763002B5882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDB9CECC29F6F763002B5882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KUGPEZH97N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Password Generator Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Password Generator Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hanlonmiller.Password-Generator.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDB9CECD29F6F763002B5882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KUGPEZH97N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Password Generator Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Password Generator Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hanlonmiller.Password-Generator.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FDB9CED029F6F763002B5882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KUGPEZH97N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Password Generator/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Password Generator";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hanlonmiller.Password-Generator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDB9CED129F6F763002B5882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KUGPEZH97N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Password Generator/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Password Generator";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hanlonmiller.Password-Generator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDB9CE8D29F6F761002B5882 /* Build configuration list for PBXProject "Password Generator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB9CEC929F6F763002B5882 /* Debug */,
+				FDB9CECA29F6F763002B5882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDB9CECB29F6F763002B5882 /* Build configuration list for PBXNativeTarget "Password Generator Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB9CECC29F6F763002B5882 /* Debug */,
+				FDB9CECD29F6F763002B5882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDB9CECF29F6F763002B5882 /* Build configuration list for PBXNativeTarget "Password Generator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDB9CED029F6F763002B5882 /* Debug */,
+				FDB9CED129F6F763002B5882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDB9CE8A29F6F761002B5882 /* Project object */;
+}
