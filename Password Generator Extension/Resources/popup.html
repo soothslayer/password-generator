@@ -6,6 +6,41 @@
     <script type="module" src="popup.js"></script>
 </head>
 <body>
-    <strong>Hello World!</strong>
+    <table>
+
+        <tr>
+            <td>
+                Password Length
+            </td>
+            <td style="text-align:left">
+                <br><input type="checkbox" id="passwordWithNumbers" name="passwordWithNumbers" checked>Numbers</br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="passwordLengthNumber" name="passwordLengthNumber" min="6" max="64" value="12">
+                <input type="range" min="6" max="64" value="12" class="slider" id="rangePasswordLength">
+            </td>
+            <td style="text-align:left">
+                <input type="checkbox" id="passwordWithUppercase" name="passwordWithUppercase" checked>Uppercase
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp
+            </td>
+            <td style="text-align:left">
+                <input type="checkbox" id="passwordWithSymbols" name="passwordWithSymbols" checked>Symbols
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="passwordField" name="passwordField">
+            </td>
+            <td>
+                <button id="generatePasswordButton">Generate Password</button>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
