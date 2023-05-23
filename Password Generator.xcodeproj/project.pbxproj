@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0C52DA2A1A6856009D4B40 /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = FD0C52D92A1A6856009D4B40 /* options.html */; };
+		FD0C52DC2A1A687F009D4B40 /* options.css in Resources */ = {isa = PBXBuildFile; fileRef = FD0C52DB2A1A687F009D4B40 /* options.css */; };
+		FD0C52DE2A1A68A6009D4B40 /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = FD0C52DD2A1A68A6009D4B40 /* options.js */; };
 		FDB9CE9629F6F761002B5882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9CE9529F6F761002B5882 /* AppDelegate.swift */; };
 		FDB9CE9A29F6F761002B5882 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CE9829F6F761002B5882 /* Main.html */; };
 		FDB9CE9C29F6F761002B5882 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDB9CE9B29F6F761002B5882 /* Icon.png */; };
@@ -53,6 +56,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD0C52D92A1A6856009D4B40 /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = options.html; sourceTree = "<group>"; };
+		FD0C52DB2A1A687F009D4B40 /* options.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = options.css; sourceTree = "<group>"; };
+		FD0C52DD2A1A68A6009D4B40 /* options.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = options.js; sourceTree = "<group>"; };
 		FDB9CE9229F6F761002B5882 /* Password Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB9CE9529F6F761002B5882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDB9CE9929F6F761002B5882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
@@ -159,6 +165,9 @@
 				FDB9CEC129F6F763002B5882 /* popup.html */,
 				FDB9CEC329F6F763002B5882 /* popup.css */,
 				FDB9CEC529F6F763002B5882 /* popup.js */,
+				FD0C52D92A1A6856009D4B40 /* options.html */,
+				FD0C52DB2A1A687F009D4B40 /* options.css */,
+				FD0C52DD2A1A68A6009D4B40 /* options.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -259,12 +268,15 @@
 			files = (
 				FDB9CEBE29F6F763002B5882 /* background.js in Resources */,
 				FDB9CEC429F6F763002B5882 /* popup.css in Resources */,
+				FD0C52DC2A1A687F009D4B40 /* options.css in Resources */,
+				FD0C52DE2A1A68A6009D4B40 /* options.js in Resources */,
 				FDB9CEC229F6F763002B5882 /* popup.html in Resources */,
 				FDB9CEBA29F6F763002B5882 /* images in Resources */,
 				FDB9CEBC29F6F763002B5882 /* manifest.json in Resources */,
 				FDB9CEB829F6F763002B5882 /* _locales in Resources */,
 				FDB9CEC029F6F763002B5882 /* content.js in Resources */,
 				FDB9CEC629F6F763002B5882 /* popup.js in Resources */,
+				FD0C52DA2A1A6856009D4B40 /* options.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

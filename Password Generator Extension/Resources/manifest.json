@@ -32,8 +32,9 @@
             "38": "images/toolbar-icon-38.png",
             "48": "images/toolbar-icon-48.png",
             "72": "images/toolbar-icon-72.png"
-        }
+        },
+        "options_page": "options/options.html"
     },
 
-    "permissions": [ ]
+    "permissions": ["storage"]
 }
