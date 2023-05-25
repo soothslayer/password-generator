@@ -1,5 +1,22 @@
 console.log("Hello World!");
-chrome.runtime.sendMessage({ text: "Popup" });
+browser.runtime.sendMessage({ text: "Popup" });
+function saveCheckMarkWithName(checkMarkName) {
+    let checkMarkVariable = document.getElementById(checkMarkName).checked
+    if (checkMarkVariable) {
+        localStorage.setItem(checkMarkName, "checked");
+    } else {
+        localStorage.setItem(checkMarkName, "unchecked");
+    }
+}
+function loadCheckMarkWithName(checkMarkName) {
+    let checkMarkVariable = localStorage.getItem(checkMarkName);
+
+    if (checkMarkVariable == "unchecked") {
+        document.getElementById(checkMarkName).checked = false;
+    } else {
+        document.getElementById(checkMarkName).checked = true;
+    }
+}
 function saveOptions() {
   /*browser.storage.local.set({
     rangePasswordLength: document.querySelector("#rangePasswordLength").value
@@ -9,17 +26,40 @@ function saveOptions() {
   });*/
     localStorage.setItem("rangePasswordLength", document.getElementById("passwordLengthNumber").value);
     console.log("saved");
-    chrome.runtime.sendMessage({ text: "saved" });
+    browser.runtime.sendMessage({ text: "saved" });
+    /*
+    let includeNumbers = document.getElementById("passwordWithNumbers").checked
+    if (includeNumbers) {
+        localStorage.setItem("passwordWithNumbers", "checked");
+    } else {
+        localStorage.setItem("passwordWithNumbers", "unchecked");
+    }
+     */
+    saveCheckMarkWithName("passwordWithNumbers");
+    saveCheckMarkWithName("passwordWithUppercase");
+    saveCheckMarkWithName("passwordWithSymbols");
 }
 function restoreOptions() {
 
     let rangePasswordLength = localStorage.getItem("rangePasswordLength");
     document.getElementById("passwordLengthNumber").value = rangePasswordLength;
     document.getElementById("rangePasswordLength").value = rangePasswordLength;
+    /*
+    let includeNumbers = localStorage.getItem("passwordWithNumbers");
+    if (includeNumbers == "unchecked") {
+        document.getElementById("passwordWithNumbers").checked = false;
+    } else {
+        document.getElementById("passwordWithNumbers").checked = true;
+    }
+    */
+    loadCheckMarkWithName("passwordWithNumbers");
+    loadCheckMarkWithName("passwordWithUppercase");
+    loadCheckMarkWithName("passwordWithSymbols");
+    
     console.log("restored");
-    chrome.runtime.sendMessage({ text: "loaded" });
-    chrome.runtime.sendMessage({ text: rangePasswordLength });
-    chrome.runtime.sendMessage({ text: document.getElementById("passwordLengthNumber").value });
+    browser.runtime.sendMessage({ text: "loaded" });
+    browser.runtime.sendMessage({ text: rangePasswordLength });
+    browser.runtime.sendMessage({ text: document.getElementById("passwordLengthNumber").value });
 }
 document.addEventListener('DOMContentLoaded', restoreOptions);
 function copyToClipboard() {
