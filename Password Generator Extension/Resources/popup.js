@@ -1,17 +1,25 @@
-console.log("Hello World!", browser);
+console.log("Hello World!");
+chrome.runtime.sendMessage({ text: "Popup" });
 function saveOptions() {
-  browser.storage.sync.set({
+  /*browser.storage.local.set({
     rangePasswordLength: document.querySelector("#rangePasswordLength").value
     //passwordWithNumbers:   document.querySelector("#passwordWithNumbers").checked
     //passwordWithUppercase: document.querySelector("#passwordWithUppercase").checked
     //passwordWithSymbols: document.querySelector("#passwordWithSymbols").checked
-  });
+  });*/
+    localStorage.setItem("rangePasswordLength", document.getElementById("passwordLengthNumber").value);
+    console.log("saved");
+    chrome.runtime.sendMessage({ text: "saved" });
 }
 function restoreOptions() {
-    let storageItemrangePasswordLength = browser.storage.managed.get('rangePasswordLength');
-    storageItemrangePasswordLength.then((res) => {
-        document.querySelector("#rangePasswordLength").value = res.rangePasswordLength;
-    });
+
+    let rangePasswordLength = localStorage.getItem("rangePasswordLength");
+    document.getElementById("passwordLengthNumber").value = rangePasswordLength;
+    document.getElementById("rangePasswordLength").value = rangePasswordLength;
+    console.log("restored");
+    chrome.runtime.sendMessage({ text: "loaded" });
+    chrome.runtime.sendMessage({ text: rangePasswordLength });
+    chrome.runtime.sendMessage({ text: document.getElementById("passwordLengthNumber").value });
 }
 document.addEventListener('DOMContentLoaded', restoreOptions);
 function copyToClipboard() {
@@ -100,6 +108,7 @@ document.getElementById("generatePasswordButton").addEventListener("click", func
   const password = generatePassword(passwordLength); // Generate a password of length 12
   document.getElementById("passwordField").value = password; // Display the password in an input field
     copyToClipboard();
+    saveOptions();
 });
 document.getElementById("passwordField").addEventListener("click", function() {
     this.select()
