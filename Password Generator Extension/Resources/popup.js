@@ -39,7 +39,12 @@ function saveOptions() {
     
 }
 function restoreOptions() {
-    let rangePasswordLength = localStorage.getItem("rangePasswordLength");
+    var rangePasswordLength = "12"
+    if (localStorage.getItem("passwordHistory") === null) {
+        
+    } else {
+        rangePasswordLength = localStorage.getItem("rangePasswordLength");
+    }
     document.getElementById("passwordLengthNumber").value = rangePasswordLength;
     document.getElementById("rangePasswordLength").value = rangePasswordLength;
     
