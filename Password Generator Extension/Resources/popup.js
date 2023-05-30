@@ -37,13 +37,6 @@ function saveOptions() {
     saveCheckMarkWithName("passwordWithUppercase");
     saveCheckMarkWithName("passwordWithSymbols");
     
-    if (localStorage.getItem("passwordHistory") === null) {
-        var passwordHistory =[];
-    } else {
-        var passwordHistory = JSON.parse(localStorage.getItem("passwordHistory"));
-    }
-    passwordHistory.push(document.getElementById("passwordField").value)
-    localStorage.setItem("passwordHistory", JSON.stringify(passwordHistory));
 }
 function restoreOptions() {
     let rangePasswordLength = localStorage.getItem("rangePasswordLength");
@@ -54,6 +47,7 @@ function restoreOptions() {
     loadCheckMarkWithName("passwordWithUppercase");
     loadCheckMarkWithName("passwordWithSymbols");
     
+    document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
     console.log("restored");
     browser.runtime.sendMessage({ text: "loaded" });
     browser.runtime.sendMessage({ text: rangePasswordLength });
@@ -77,10 +71,22 @@ function restoreOptions() {
     }
 
 }
-
+function saveToPasswordHistory() {
+    if (localStorage.getItem("passwordHistory") === null) {
+        var passwordHistory =[];
+    } else {
+        var passwordHistory = JSON.parse(localStorage.getItem("passwordHistory"));
+    }
+    if (!passwordHistory.includes(document.getElementById("passwordField").value)) {
+        passwordHistory.unshift(document.getElementById("passwordField").value);
+        if (passwordHistory.length > 10) {
+            passwordHistory.pop()
+        }
+        localStorage.setItem("passwordHistory", JSON.stringify(passwordHistory));
+    }
+}
 document.addEventListener('DOMContentLoaded', restoreOptions);
 
-document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
 document.querySelector("#rangePasswordLength").addEventListener('change', () => {
     document.getElementById("passwordLengthNumber").value = document.getElementById("rangePasswordLength").value
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
@@ -154,6 +160,7 @@ document.getElementById("generatePasswordButton").addEventListener("click", func
 document.getElementById("copyAndClose").addEventListener("click", function() {
     copyToClipboard();
     saveOptions();
+    saveToPasswordHistory();
     window.close();
 });
 document.getElementById("passwordField").addEventListener("click", function() {
@@ -164,5 +171,15 @@ document.getElementById("clearHistory").addEventListener("click", function() {
     var passwordHistory = [];
     localStorage.setItem("passwordHistory", JSON.stringify(passwordHistory));
     var select = document.getElementById("passwordHistory");
-    let i = 1;
+    while (select.options.length > 0) {
+        select.remove(0);
+    }
+    var option = document.createElement("OPTION");
+    select.options.add(option);
+    option.text = "Password History";
+    option.value = "";
+});
+document.querySelector("#passwordHistory").addEventListener('change', () => {
+    document.getElementById("passwordField").value = document.getElementById("passwordHistory").value;
+    document.getElementById("passwordHistory").value = "";
 });
