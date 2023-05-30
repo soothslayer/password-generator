@@ -1,10 +1,10 @@
 {
     "extension_name": {
-        "message": "Password Generator Extension",
-        "description": "The display name for the extension."
+        "message": "Password Generator",
+        "description": "Simple Password Generator Safari Extension"
     },
     "extension_description": {
-        "message": "This is Password Generator Extension. You should tell us what your extension does here.",
-        "description": "Description of what the extension does."
+        "message": "This is a Simple Password Generator Safari Extension.",
+        "description": "This is a Simple Password Generator Safari Extension."
     }
 }
