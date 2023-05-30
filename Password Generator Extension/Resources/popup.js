@@ -36,6 +36,14 @@ function saveOptions() {
     saveCheckMarkWithName("passwordWithNumbers");
     saveCheckMarkWithName("passwordWithUppercase");
     saveCheckMarkWithName("passwordWithSymbols");
+    
+    if (localStorage.getItem("passwordHistory") === null) {
+        var passwordHistory =[];
+    } else {
+        var passwordHistory = JSON.parse(localStorage.getItem("passwordHistory"));
+    }
+    passwordHistory.push(document.getElementById("passwordField").value)
+    localStorage.setItem("passwordHistory", JSON.stringify(passwordHistory));
 }
 function restoreOptions() {
     let rangePasswordLength = localStorage.getItem("rangePasswordLength");
@@ -50,6 +58,24 @@ function restoreOptions() {
     browser.runtime.sendMessage({ text: "loaded" });
     browser.runtime.sendMessage({ text: rangePasswordLength });
     browser.runtime.sendMessage({ text: document.getElementById("passwordLengthNumber").value });
+    
+    //check if password history exists and if it does then populate the password history select
+    if (localStorage.getItem("passwordHistory") === null) {
+      
+    } else {
+        var passwordHistory = JSON.parse(localStorage.getItem("passwordHistory"));
+        let i = 0;
+
+        while (i < passwordHistory.length) {
+            var select = document.getElementById("passwordHistory");
+            var option = document.createElement("OPTION");
+            select.options.add(option);
+            option.text = passwordHistory[i];
+            option.value = passwordHistory[i];
+            i++;
+        }
+    }
+
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
@@ -133,4 +159,10 @@ document.getElementById("copyAndClose").addEventListener("click", function() {
 document.getElementById("passwordField").addEventListener("click", function() {
     this.select()
     document.execCommand('copy');
+});
+document.getElementById("clearHistory").addEventListener("click", function() {
+    var passwordHistory = [];
+    localStorage.setItem("passwordHistory", JSON.stringify(passwordHistory));
+    var select = document.getElementById("passwordHistory");
+    let i = 1;
 });
