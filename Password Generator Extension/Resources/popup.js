@@ -1,4 +1,11 @@
 console.log("Hello World!", browser);
+for(var i=6; i<=50; i++){
+    var select = document.getElementById("passwordLengthNumber");
+    var option = document.createElement("OPTION");
+    select.options.add(option);
+    option.text = i;
+    option.value = i;
+}
 function copyToClipboard() {
     document.getElementById("passwordField").select();
     document.execCommand('copy');
@@ -48,47 +55,39 @@ function restoreOptions() {
 document.addEventListener('DOMContentLoaded', restoreOptions);
 
 document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
-copyToClipboard();
 document.querySelector("#rangePasswordLength").addEventListener('change', () => {
     document.getElementById("passwordLengthNumber").value = document.getElementById("rangePasswordLength").value
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
-    copyToClipboard();
     saveOptions();
 });
 document.querySelector("#rangePasswordLength").addEventListener('input', () => {
     document.getElementById("passwordLengthNumber").value = document.getElementById("rangePasswordLength").value
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
-    copyToClipboard();
     saveOptions();
 });
 document.querySelector("#passwordLengthNumber").addEventListener('change', () => {
     document.getElementById("rangePasswordLength").value = document.getElementById("passwordLengthNumber").value
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
-    copyToClipboard();
     saveOptions();
 });
 document.querySelector("#passwordLengthNumber").addEventListener('input', () => {
     document.getElementById("rangePasswordLength").value = document.getElementById("passwordLengthNumber").value
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
-    copyToClipboard();
     saveOptions();
 });
 document.querySelector("#passwordWithNumbers").addEventListener('click', () => {
     //document.getElementById("rangePasswordLength").value = document.getElementById("passwordLengthNumber").value
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
-    copyToClipboard();
     saveOptions();
 });
 document.querySelector("#passwordWithUppercase").addEventListener('click', () => {
     //document.getElementById("rangePasswordLength").value = document.getElementById("passwordLengthNumber").value
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
-    copyToClipboard();
     saveOptions();
 });
 document.querySelector("#passwordWithSymbols").addEventListener('click', () => {
     //document.getElementById("rangePasswordLength").value = document.getElementById("passwordLengthNumber").value
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
-    copyToClipboard();
     saveOptions();
 });
 function updateNumberInput(newVal){
@@ -123,10 +122,13 @@ function generatePassword(length) {
 }
 document.getElementById("generatePasswordButton").addEventListener("click", function() {
     let passwordLength = document.getElementById("rangePasswordLength").value
-  const password = generatePassword(passwordLength); // Generate a password of length 12
+  const password = generatePassword(passwordLength); // Generate a password of length rangePasswordLength
   document.getElementById("passwordField").value = password; // Display the password in an input field
+});
+document.getElementById("copyAndClose").addEventListener("click", function() {
     copyToClipboard();
     saveOptions();
+    window.close();
 });
 document.getElementById("passwordField").addEventListener("click", function() {
     this.select()

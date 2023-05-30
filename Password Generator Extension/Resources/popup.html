@@ -18,16 +18,19 @@
         </tr>
         <tr>
             <td>
-                <input type="number" id="passwordLengthNumber" name="passwordLengthNumber" min="6" max="64" value="12">
-                <input type="range" min="6" max="64" value="12" class="slider" id="rangePasswordLength">
+                <select id="passwordLengthNumber"></select>
+                <!--<input type="number" id="passwordLengthNumber" name="passwordLengthNumber" min="6" max="64" value="12">--->
+                <input type="range" min="6" max="50" value="12" class="slider" id="rangePasswordLength">
             </td>
             <td style="text-align:left">
-                <input type="checkbox" id="passwordWithUppercase" name="passwordWithUppercase" checked>Uppercase
+                <label class="ios-switch">
+                    <input type="checkbox" id="passwordWithUppercase" name="passwordWithUppercase" checked>Uppercase
+                </label>
             </td>
         </tr>
         <tr>
             <td>
-                &nbsp
+                <input type="text" id="passwordField" name="passwordField">
             </td>
             <td style="text-align:left">
                 <input type="checkbox" id="passwordWithSymbols" name="passwordWithSymbols" checked>Symbols
@@ -35,12 +38,13 @@
         </tr>
         <tr>
             <td>
-                <input type="text" id="passwordField" name="passwordField">
+                <button id="copyAndClose">Copy and Close</button>
             </td>
             <td>
-                <button id="generatePasswordButton">Generate Password</button>
+                <button id="generatePasswordButton">🔄Generate</button>
             </td>
         </tr>
     </table>
+    <p id="status"></p>
 </body>
 </html>
