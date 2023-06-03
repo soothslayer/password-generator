@@ -36,7 +36,7 @@ function saveOptions() {
     saveCheckMarkWithName("passwordWithNumbers");
     saveCheckMarkWithName("passwordWithUppercase");
     saveCheckMarkWithName("passwordWithSymbols");
-    
+    saveCheckMarkWithName("oneOfEachSpecialCharacter");
 }
 function restoreOptions() {
     var rangePasswordLength = "12"
@@ -51,6 +51,7 @@ function restoreOptions() {
     loadCheckMarkWithName("passwordWithNumbers");
     loadCheckMarkWithName("passwordWithUppercase");
     loadCheckMarkWithName("passwordWithSymbols");
+    loadCheckMarkWithName("oneOfEachSpecialCharacter");
     
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
     console.log("restored");
@@ -63,6 +64,19 @@ function restoreOptions() {
       
     } else {
         var passwordHistory = JSON.parse(localStorage.getItem("passwordHistory"));
+
+        if (localStorage.getItem("passwordLastSet") === null) {
+            
+        } else {
+            const currentDate = new Date();
+            const thirtyMinutesAgo = new Date(currentDate.getTime() - 1 * 60000);
+            const passwordLastSet = new Date(JSON.parse(localStorage.getItem("passwordLastSet")));
+            if (passwordLastSet < thirtyMinutesAgo) {
+                passwordHistory = [];
+                localStorage.setItem("passwordHistory", null)
+            }
+        }
+   
         let i = 0;
 
         while (i < passwordHistory.length) {
@@ -89,6 +103,8 @@ function saveToPasswordHistory() {
         }
         localStorage.setItem("passwordHistory", JSON.stringify(passwordHistory));
     }
+    const date = new Date().getTime();
+    localStorage.setItem("passwordLastSet", JSON.stringify(date));
 }
 document.addEventListener('DOMContentLoaded', restoreOptions);
 
@@ -127,6 +143,11 @@ document.querySelector("#passwordWithSymbols").addEventListener('click', () => {
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
     saveOptions();
 });
+document.querySelector("#oneOfEachSpecialCharacter").addEventListener('click', () => {
+    //document.getElementById("rangePasswordLength").value = document.getElementById("passwordLengthNumber").value
+    document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
+    saveOptions();
+});
 function updateNumberInput(newVal){
     document.getElementById("passwordLengthNumber").value=newVal;
 }
@@ -152,7 +173,20 @@ function generatePassword(length) {
     }
   //const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
   let password = "";
+    let oneOfEachSpecialCharacter = document.getElementById("oneOfEachSpecialCharacter").checked;
+    const regexUppercase = new RegExp('[A-Z]');
+    const regexNumbers = new RegExp('[0-9]');
+    const regexSymbols = new RegExp('[!@#$%^&*()_+]');
   for (let i = 0; i < length; i++) {
+      if (oneOfEachSpecialCharacter && regexUppercase.test(password)) {
+          charset = charset.replace(/[A-Z]/g, '');
+      }
+      if (oneOfEachSpecialCharacter && regexNumbers.test(password)) {
+          charset = charset.replace(/[0-9]/g, '');
+      }
+      if (oneOfEachSpecialCharacter && regexSymbols.test(password)) {
+          charset = charset.replace(/[!@#$%^&*()_+]/g, '');
+      }
     password += charset.charAt(Math.floor(Math.random() * charset.length));
   }
   return password;
@@ -165,7 +199,7 @@ document.getElementById("generatePasswordButton").addEventListener("click", func
 document.getElementById("copyAndClose").addEventListener("click", function() {
     copyToClipboard();
     saveOptions();
-    saveToPasswordHistory();
+    //saveToPasswordHistory();
     window.close();
 });
 document.getElementById("passwordField").addEventListener("click", function() {
