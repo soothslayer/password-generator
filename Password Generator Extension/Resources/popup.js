@@ -1,4 +1,5 @@
-console.log("Hello World!", browser);
+//console.log("Hello World!", browser);
+//safari.extension.globalPage.contentWindow.console.log("Hello");
 for(var i=6; i<=50; i++){
     var select = document.getElementById("passwordLengthNumber");
     var option = document.createElement("OPTION");
@@ -31,7 +32,7 @@ function loadCheckMarkWithName(checkMarkName) {
 function saveOptions() {
     localStorage.setItem("rangePasswordLength", document.getElementById("passwordLengthNumber").value);
     console.log("saved");
-    browser.runtime.sendMessage({ text: "saved" });
+    //browser.runtime.sendMessage({ text: "saved" });
 
     saveCheckMarkWithName("passwordWithNumbers");
     saveCheckMarkWithName("passwordWithUppercase");
@@ -55,26 +56,27 @@ function restoreOptions() {
     
     document.getElementById("passwordField").value = generatePassword(document.getElementById("rangePasswordLength").value);
     console.log("restored");
-    browser.runtime.sendMessage({ text: "loaded" });
-    browser.runtime.sendMessage({ text: rangePasswordLength });
-    browser.runtime.sendMessage({ text: document.getElementById("passwordLengthNumber").value });
+    chrome.runtime.sendMessage({ text: "loaded" });
+    //browser.runtime.sendMessage({ text: rangePasswordLength });
+    //browser.runtime.sendMessage({ text: document.getElementById("passwordLengthNumber").value });
     
     //check if password history exists and if it does then populate the password history select
     if (localStorage.getItem("passwordHistory") === null) {
-      
+        chrome.runtime.sendMessage({ text: "passwordHistory is null" });
     } else {
         var passwordHistory = JSON.parse(localStorage.getItem("passwordHistory"));
 
         if (localStorage.getItem("passwordLastSet") === null) {
             
         } else {
-            const currentDate = new Date();
+            chrome.runtime.sendMessage({ text: "passwordHistory is not null" });
+            /*const currentDate = new Date();
             const thirtyMinutesAgo = new Date(currentDate.getTime() - 1 * 60000);
             const passwordLastSet = new Date(JSON.parse(localStorage.getItem("passwordLastSet")));
             if (passwordLastSet < thirtyMinutesAgo) {
                 passwordHistory = [];
                 localStorage.setItem("passwordHistory", null)
-            }
+            }*/
         }
    
         let i = 0;
@@ -91,10 +93,10 @@ function restoreOptions() {
 
 }
 function saveToPasswordHistory() {
+    var passwordHistory =[];
     if (localStorage.getItem("passwordHistory") === null) {
-        var passwordHistory =[];
     } else {
-        var passwordHistory = JSON.parse(localStorage.getItem("passwordHistory"));
+        passwordHistory = JSON.parse(localStorage.getItem("passwordHistory"));
     }
     if (!passwordHistory.includes(document.getElementById("passwordField").value)) {
         passwordHistory.unshift(document.getElementById("passwordField").value);
@@ -103,8 +105,6 @@ function saveToPasswordHistory() {
         }
         localStorage.setItem("passwordHistory", JSON.stringify(passwordHistory));
     }
-    const date = new Date().getTime();
-    localStorage.setItem("passwordLastSet", JSON.stringify(date));
 }
 document.addEventListener('DOMContentLoaded', restoreOptions);
 
@@ -199,7 +199,7 @@ document.getElementById("generatePasswordButton").addEventListener("click", func
 document.getElementById("copyAndClose").addEventListener("click", function() {
     copyToClipboard();
     saveOptions();
-    //saveToPasswordHistory();
+    saveToPasswordHistory();
     window.close();
 });
 document.getElementById("passwordField").addEventListener("click", function() {
